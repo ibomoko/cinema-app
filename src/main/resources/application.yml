@@ -1,0 +1,52 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:${CINEMA_APP_DB_NAME:cinemadb};INIT=CREATE SCHEMA IF NOT EXISTS ${CINEMA_APP_DB_SCHEMA_NAME:cinema}
+    driverClassName: org.h2.Driver
+    username: ${CINEMA_APP_DB_USERNAME:user999}
+    password: ${CINEMA_APP_DB_PASSWORD:password999}
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        default_schema: ${CINEMA_APP_DB_SCHEMA_NAME:cinema}
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
+    enabled: true
+    liquibase-schema: ${CINEMA_APP_DB_SCHEMA_NAME:cinema}
+    default-schema: ${CINEMA_APP_DB_SCHEMA_NAME:cinema}
+
+springdoc:
+  swagger-ui:
+    enabled: ${CINEMA_APP_SPRING_DOC_ENABLED:true}
+  api-docs:
+    enabled: ${CINEMA_APP_SPRING_DOC_ENABLED:true}
+
+swagger:
+  title: CINEMA-APP
+  version: v1
+  baseUrl: ${CINEMA_APP_BACKEND_SERVICE_DOMAIN:http://localhost:8080}
+
+security:
+  auth:
+    whitelist: >
+      /swagger-resources,
+      /swagger-resources/**,
+      /configuration/ui,
+      /configuration/security,
+      /swagger-ui.html,
+      /webjars/**,
+      /api/public/**,
+      /v3/api-docs/**,
+      /v3/api-docs,
+      /swagger-ui/**,
+      /v2/api-docs,
+      /api/v1/public/**,
+      /h2-console/**
+  jwt:
+    secret: ${CINEMA_APP_BACKEND_SERVICE_SECRET:CinemaAppSecret}
+    default-expiration-time: ${CINEMA_APP_BACKEND_SERVICE_JWT_DEFAULT_EXPIRATION_TIME:180}
+    issuer: ${CINEMA_APP_BACKEND_SERVICE_SECRET:CinemaAppBackendService}

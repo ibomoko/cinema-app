@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+
+        <changeSet id="create_users_table" author="Ibrahim">
+            <createTable tableName="users">
+                <column name="id" type="char(32)">
+                    <constraints nullable="false" primaryKey="true"/>
+                </column>
+                <column name="username" type="varchar(100)"/>
+                <column name="name" type="varchar(100)"/>
+                <column name="surname" type="varchar(100)"/>
+                <column name="patronymic" type="varchar(100)"/>
+                <column name="password" type="varchar(500)"/>
+                <column name="role" type="varchar(50)"/>
+                <column name="balance" type="numeric"/>
+            </createTable>
+        </changeSet>
+
+        <changeSet id="create_movies_table" author="Ibrahim">
+            <createTable tableName="movies">
+                <column name="id" type="char(32)">
+                    <constraints nullable="false" primaryKey="true"/>
+                </column>
+                <column name="title" type="varchar(255)"/>
+                <column name="description" type="varchar(500)"/>
+                <column name="release_year" type="int"/>
+                <column name="genre" type="varchar(100)"/>
+                <column name="duration" type="int"/>
+            </createTable>
+        </changeSet>
+
+        <changeSet id="create_halls_table" author="Ibrahim">
+            <createTable tableName="halls">
+                <column name="id" type="char(32)">
+                    <constraints nullable="false" primaryKey="true"/>
+                </column>
+                <column name="name" type="varchar(100)"/>
+                <column name="capacity" type="int"/>
+            </createTable>
+        </changeSet>
+
+        <changeSet id="create_seats_table" author="Ibrahim">
+            <createTable tableName="seats">
+                <column name="id" type="char(32)">
+                    <constraints nullable="false" primaryKey="true"/>
+                </column>
+                <column name="row_number" type="int"/>
+                <column name="seat_number" type="int"/>
+                <column name="hall_id" type="char(32)">
+                    <constraints foreignKeyName="fk_halls_seats"
+                                 referencedTableName="halls"
+                                 referencedColumnNames="id"/>
+                </column>
+            </createTable>
+        </changeSet>
+
+        <changeSet id="create_sessions_table" author="Ibrahim">
+            <createTable tableName="sessions">
+                <column name="id" type="char(32)">
+                    <constraints nullable="false" primaryKey="true"/>
+                </column>
+                <column name="start_date" type="timestamp without time zone"/>
+                <column name="type" type="varchar(30)"/>
+                <column name="price" type="numeric"/>
+                <column name="hall_id" type="char(32)">
+                    <constraints foreignKeyName="fk_halls_sessions"
+                                 referencedTableName="halls"
+                                 referencedColumnNames="id"/>
+                </column>
+                <column name="movie_id" type="char(32)">
+                    <constraints foreignKeyName="fk_movies_sessions"
+                                 referencedTableName="movies"
+                                 referencedColumnNames="id"/>
+                </column>
+            </createTable>
+        </changeSet>
+
+        <changeSet id="create_tickets_table" author="Ibrahim">
+            <createTable tableName="tickets">
+                <column name="id" type="char(32)">
+                    <constraints nullable="false" primaryKey="true"/>
+                </column>
+                <column name="status" type="varchar(30)"/>
+                <column name="purchase_date" type="timestamp without time zone"/>
+                <column name="session_id" type="char(32)">
+                    <constraints foreignKeyName="fk_sessions_tickets"
+                                 referencedTableName="sessions"
+                                 referencedColumnNames="id"/>
+                </column>
+                <column name="seat_id" type="char(32)">
+                    <constraints foreignKeyName="fk_seats_tickets"
+                                 referencedTableName="seats"
+                                 referencedColumnNames="id"/>
+                </column>
+                <column name="user_id" type="char(32)">
+                    <constraints foreignKeyName="fk_users_tickets"
+                                 referencedTableName="users"
+                                 referencedColumnNames="id"/>
+                </column>
+            </createTable>
+        </changeSet>
+
+
+    
+</databaseChangeLog>
