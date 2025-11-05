@@ -1,0 +1,91 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="insert_users_for_demo" author="Ibrahim">
+        <insert tableName="users">
+            <column name="id" value="1058fd77f8244a4e95eae83016d4071a"/>
+            <column name="username" value="admin"/>
+            <column name="password" value="$2a$08$5.Gs2IO9/eJhTnBYrhvz.u1hoYebTTtqD87s3xreov.oCa3biDpj6"/>
+            <!-- password is 'testtest1' -->
+            <column name="name" value="Ibrahim"/>
+            <column name="patronymic" value="Rufat"/>
+            <column name="surname" value="Ahmadov"/>
+            <column name="role" value="ADMIN"/>
+            <column name="balance" value="100000"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" value="58b28b79157f40d8b9242dcf462a77f2"/>
+            <column name="username" value="user"/>
+            <column name="password" value="$2a$08$7qcF16U9e6SWkknBODCWveFkPgwoVwZQARpVH8gSCTBnNj4F3DBae"/>
+            <!-- password is 'testtest2' -->
+            <column name="name" value="Nijat"/>
+            <column name="patronymic" value="Ahmad"/>
+            <column name="surname" value="Orujov"/>
+            <column name="role" value="USER"/>
+            <column name="balance" value="100"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_movies_for_demo" author="Ibrahim">
+        <insert tableName="movies">
+            <column name="id" value="b536d1e1e0984311a1367c3b8dcbbe88"/>
+            <column name="title" value="Inception"/>
+            <column name="description" value="A thief who enters dreams to steal secrets."/>
+            <column name="release_year" value="2010"/>
+            <column name="genre" value="Sci-Fi"/>
+            <column name="duration" value="148"/>
+        </insert>
+        <insert tableName="movies">
+            <column name="id" value="ab77cbb850d24870be9bf495be2dc413"/>
+            <column name="title" value="The Dark Knight"/>
+            <column name="description" value="Batman fights the Joker to save Gotham."/>
+            <column name="release_year" value="2008"/>
+            <column name="genre" value="Action"/>
+            <column name="duration" value="152"/>
+        </insert>
+        <insert tableName="movies">
+            <column name="id" value="74fc089fd9ad49089c9f4095ca12a0e2"/>
+            <column name="title" value="Interstellar"/>
+            <column name="description" value="A space mission to save humanity."/>
+            <column name="release_year" value="2014"/>
+            <column name="genre" value="Sci-Fi"/>
+            <column name="duration" value="169"/>
+        </insert>
+        <insert tableName="movies">
+            <column name="id" value="9a437c0ddafb453ea5f97623ad90778c"/>
+            <column name="title" value="The Godfather"/>
+            <column name="description" value="The story of a powerful mafia family."/>
+            <column name="release_year" value="1972"/>
+            <column name="genre" value="Crime"/>
+            <column name="duration" value="175"/>
+        </insert>
+        <insert tableName="movies">
+            <column name="id" value="893ce8b43a274d0e8206df059cdc8cb5"/>
+            <column name="title" value="Titanic"/>
+            <column name="description" value="A love story on the doomed Titanic ship."/>
+            <column name="release_year" value="1997"/>
+            <column name="genre" value="Romance"/>
+            <column name="duration" value="195"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_halls_for_demo" author="Ibrahim">
+        <insert tableName="halls">
+            <column name="id" value="88de0e328a3d4ab48146ea0c1a4d01af"/>
+            <column name="name" value="Hall A"/>
+            <column name="capacity" value="30"/>
+        </insert>
+        <insert tableName="halls">
+            <column name="id" value="81568f077f14465080fc35807041ed32"/>
+            <column name="name" value="Hall B"/>
+            <column name="capacity" value="30"/>
+        </insert>
+    </changeSet>
+
+
+
+
+
+</databaseChangeLog>

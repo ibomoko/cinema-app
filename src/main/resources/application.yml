@@ -9,6 +9,8 @@ spring:
     properties:
       hibernate:
         default_schema: ${CINEMA_APP_DB_SCHEMA_NAME:cinema}
+    open-in-view: false
+
   h2:
     console:
       enabled: true

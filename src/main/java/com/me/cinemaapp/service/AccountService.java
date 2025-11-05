@@ -1,5 +1,6 @@
 package com.me.cinemaapp.service;
 
+import com.me.cinemaapp.converter.UserConverter;
 import com.me.cinemaapp.dao.UserRepository;
 import com.me.cinemaapp.entity.User;
 import com.me.cinemaapp.enums.Role;
@@ -23,22 +24,14 @@ public class AccountService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JWTProvider jwtProvider;
+    private final UserConverter userConverter;
 
     public void signUp(UserSignUpRequest request) {
         if (userRepository.existsByUsername(request.username())) {
             throw new ResourceAlreadyExistException("User already exists with this username.");
         }
 
-        User user = User.builder()
-                .username(request.username())
-                .password(passwordEncoder.encode(request.password()))
-                .name(request.name())
-                .surname(request.surname())
-                .patronymic(request.patronymic())
-                .role(Role.USER)
-                .balance(BigDecimal.valueOf(100))
-                .build();
-
+        User user = userConverter.apply(request);
         userRepository.save(user);
     }
 

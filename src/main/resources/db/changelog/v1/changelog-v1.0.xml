@@ -9,5 +9,6 @@
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <include file="/db/changelog/v1/changelog-v1.0-tables.xml"/>
+    <include file="/db/changelog/v1/changelog-v1.0-initial-records.xml"/>
 
 </databaseChangeLog>
