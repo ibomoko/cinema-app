@@ -1,6 +1,6 @@
 package com.me.cinemaapp.controller;
 
-import com.me.cinemaapp.model.MovieResponse;
+import com.me.cinemaapp.model.response.MovieResponse;
 import com.me.cinemaapp.model.request.MovieFilter;
 import com.me.cinemaapp.model.request.MovieRequest;
 import com.me.cinemaapp.service.MovieService;
@@ -12,8 +12,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/movies")
@@ -41,6 +39,11 @@ public class MovieController {
     public Page<MovieResponse> getMovies(@ParameterObject MovieFilter movieFilter,
                                          @ParameterObject Pageable pageable) {
         return movieService.getMovies(movieFilter, pageable);
+    }
+
+    @GetMapping("/{id}")
+    public MovieResponse getMovie(@PathVariable String id) {
+        return movieService.getMovieById(id);
     }
 
 }

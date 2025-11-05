@@ -1,4 +1,4 @@
-package com.me.cinemaapp.model;
+package com.me.cinemaapp.model.response;
 
 public record MovieResponse(String id,
                             String title,

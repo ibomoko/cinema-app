@@ -1,7 +1,7 @@
 package com.me.cinemaapp.converter;
 
 import com.me.cinemaapp.entity.Movie;
-import com.me.cinemaapp.model.MovieResponse;
+import com.me.cinemaapp.model.response.MovieResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

@@ -6,7 +6,7 @@ import com.me.cinemaapp.dao.MovieRepository;
 import com.me.cinemaapp.entity.Movie;
 import com.me.cinemaapp.error.exception.ResourceAlreadyExistException;
 import com.me.cinemaapp.error.exception.ResourceNotFoundException;
-import com.me.cinemaapp.model.MovieResponse;
+import com.me.cinemaapp.model.response.MovieResponse;
 import com.me.cinemaapp.model.request.MovieFilter;
 import com.me.cinemaapp.model.request.MovieRequest;
 import com.me.cinemaapp.specification.MovieSpecification;
@@ -49,4 +49,10 @@ public class MovieService {
         return movieRepository.findAll(movieSpecification, pageable).map(movieResponseConverter);
     }
 
+    public MovieResponse getMovieById(String id) {
+        Movie movie = movieRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Movie not found with this id."));
+
+        return movieResponseConverter.apply(movie);
+    }
 }
