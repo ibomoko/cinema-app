@@ -14,6 +14,10 @@ import java.util.Date;
 @Getter
 @Setter
 @Builder
+@NamedEntityGraph(
+        name = "ticket.sessions",
+        attributeNodes = @NamedAttributeNode("session")
+)
 public class Ticket {
 
     @Id
@@ -34,8 +38,18 @@ public class Ticket {
     @JoinColumn(name = "session_id")
     private Session session;
 
+    @Column(name = "session_id", insertable = false, updatable = false)
+    private String sessionId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "seat_id")
     private Seat seat;
+
+    @Column(name = "seat_id", insertable = false, updatable = false)
+    private String seatId;
+
+    @Column(name = "is_expired")
+    @Builder.Default
+    private Boolean isExpired = false;
 
 }

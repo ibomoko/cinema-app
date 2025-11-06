@@ -28,4 +28,12 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    public synchronized void decreaseBalance(BigDecimal amount) {
+        this.balance = balance.subtract(amount);
+    }
+
+    public synchronized void increaseBalance(BigDecimal amount) {
+        this.balance = balance.add(amount);
+    }
+
 }

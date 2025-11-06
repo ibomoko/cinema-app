@@ -3,6 +3,7 @@ package com.me.cinemaapp.controller;
 import com.me.cinemaapp.model.response.MovieResponse;
 import com.me.cinemaapp.model.request.MovieFilter;
 import com.me.cinemaapp.model.request.MovieRequest;
+import com.me.cinemaapp.model.response.SessionResponse;
 import com.me.cinemaapp.service.MovieService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -44,6 +45,12 @@ public class MovieController {
     @GetMapping("/{id}")
     public MovieResponse getMovie(@PathVariable String id) {
         return movieService.getMovieById(id);
+    }
+
+    @GetMapping("/{id}/sessions")
+    public Page<SessionResponse> getMovieSessions(@PathVariable String id,
+                                                  @ParameterObject Pageable pageable) {
+        return movieService.getMovieSessions(id, pageable);
     }
 
 }

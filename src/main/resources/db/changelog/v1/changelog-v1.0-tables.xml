@@ -105,6 +105,17 @@
             </createTable>
         </changeSet>
 
+    <changeSet id="add_is_expired_column_to_tickets_table" author="Ibrahim">
+        <addColumn tableName="tickets">
+            <column name="is_expired" type="boolean"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="add_is_closed_column_to_sessions_table" author="Ibrahim">
+        <addColumn tableName="sessions">
+            <column name="is_closed" type="boolean"/>
+        </addColumn>
+    </changeSet>
 
     
 </databaseChangeLog>

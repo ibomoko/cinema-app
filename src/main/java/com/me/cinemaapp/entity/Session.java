@@ -32,8 +32,18 @@ public class Session {
     @JoinColumn(name = "hall_id")
     private Hall hall;
 
+    @Column(name = "hall_id", insertable = false, updatable = false)
+    String hallId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "movie_id")
     private Movie movie;
+
+    @Column(name = "movie_id", insertable = false, updatable = false)
+    private String movieId;
+
+    @Column(name = "is_closed")
+    @Builder.Default
+    private Boolean isClosed = false;
 
 }

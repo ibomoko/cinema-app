@@ -3,7 +3,6 @@ package com.me.cinemaapp.entity.idgenerator;
 
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.id.IdentifierGenerator;
-import org.hibernate.id.UUIDGenerator;
 
 import java.util.UUID;
 

@@ -26,6 +26,18 @@
             <column name="role" value="USER"/>
             <column name="balance" value="100"/>
         </insert>
+        <insert tableName="users">
+            <column name="id" value="909a71d3f887481cbc93f4116f5ca115"/>
+            <column name="username" value="user2"/>
+            <column name="password" value="$2a$08$pIaRfg1QJEYhAlAsBhNoe.rV6pJNH0Xk2Xa2oQo.ujAxtE9NrSEg."/>
+            <!-- password is 'testtest3' -->
+            <column name="name" value="Tofiq"/>
+            <column name="patronymic" value="Mehman"/>
+            <column name="surname" value="Salahov"/>
+            <column name="role" value="USER"/>
+            <!-- balance is 0 for testing refund api  -->
+            <column name="balance" value="0"/>
+        </insert>
     </changeSet>
 
     <changeSet id="insert_movies_for_demo" author="Ibrahim">
@@ -82,6 +94,12 @@
             <column name="name" value="Hall B"/>
             <column name="capacity" value="30"/>
         </insert>
+        <insert tableName="halls">
+            <column name="id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+            <column name="name" value="Hall C"/>
+            <column name="capacity" value="30"/>
+        </insert>
+
     </changeSet>
 
     <changeSet id="insert_seats_for_demo" author="Ibrahim">
@@ -447,6 +465,188 @@
             <column name="row_number" value="5"/>
             <column name="seat_number" value="6"/>
             <column name="hall_id" value="81568f077f14465080fc35807041ed32"/>
+        </insert>
+
+        <!-- Seats for Hall C  -->
+        <insert tableName="seats">
+            <column name="id" value="99cc46c03e4d4242b51f0d8c6355db97"/>
+            <column name="row_number" value="1"/>
+            <column name="seat_number" value="1"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="15fa6066a1834a729e7868b95768565f"/>
+            <column name="row_number" value="1"/>
+            <column name="seat_number" value="2"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="fb201f43a4ee4c2da166802d90fc688e"/>
+            <column name="row_number" value="1"/>
+            <column name="seat_number" value="3"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="86b7bd284f2f47b5ba42bb8907863a15"/>
+            <column name="row_number" value="1"/>
+            <column name="seat_number" value="4"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="5bc7e99a332b4c9190d95b219be84b5d"/>
+            <column name="row_number" value="1"/>
+            <column name="seat_number" value="5"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="778f8b301cbb425e8507b2010ec33044"/>
+            <column name="row_number" value="1"/>
+            <column name="seat_number" value="6"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="5b25c4867803468ab0ca9274b8187394"/>
+            <column name="row_number" value="2"/>
+            <column name="seat_number" value="1"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="a1542c1134d64d70b2b62c37f0cab24f"/>
+            <column name="row_number" value="2"/>
+            <column name="seat_number" value="2"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="df89a63ef0a141289b6fe1822c3a21f1"/>
+            <column name="row_number" value="2"/>
+            <column name="seat_number" value="3"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="2592e24a612c4657b42e15898b49b652"/>
+            <column name="row_number" value="2"/>
+            <column name="seat_number" value="4"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="242372c2fae348078578f2f32eb343b0"/>
+            <column name="row_number" value="2"/>
+            <column name="seat_number" value="5"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="614109a6893042a2b643be0327b117cf"/>
+            <column name="row_number" value="2"/>
+            <column name="seat_number" value="6"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="eb8ec012da394bd8b953c598a627ca64"/>
+            <column name="row_number" value="3"/>
+            <column name="seat_number" value="1"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="9e215916398e41fd9eee983c9358e76e"/>
+            <column name="row_number" value="3"/>
+            <column name="seat_number" value="2"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="ce19bff93092420582abf8d861458f5e"/>
+            <column name="row_number" value="3"/>
+            <column name="seat_number" value="3"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="6315953654aa4df5816be89eb0ce5b92"/>
+            <column name="row_number" value="3"/>
+            <column name="seat_number" value="4"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="de44bf3becd74b54a01f3165282651e6"/>
+            <column name="row_number" value="3"/>
+            <column name="seat_number" value="5"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="b279f7b5aae74e548727cefadaedee61"/>
+            <column name="row_number" value="3"/>
+            <column name="seat_number" value="6"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="68461194584d4773a6d854718f7c31c1"/>
+            <column name="row_number" value="4"/>
+            <column name="seat_number" value="1"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="2121fce5927343128e28cb0c748c7d95"/>
+            <column name="row_number" value="4"/>
+            <column name="seat_number" value="2"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="290597bfc259499c88833b88a4711b0f"/>
+            <column name="row_number" value="4"/>
+            <column name="seat_number" value="3"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="5d75f203880a4f7d9d4c00754a5f287e"/>
+            <column name="row_number" value="4"/>
+            <column name="seat_number" value="4"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="be10e15ee8c84334927e7b20b837fab9"/>
+            <column name="row_number" value="4"/>
+            <column name="seat_number" value="5"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="41e191bd84a64280ba18b827a171c593"/>
+            <column name="row_number" value="4"/>
+            <column name="seat_number" value="6"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="0070a916d4f6497685c17dab09babcdb"/>
+            <column name="row_number" value="5"/>
+            <column name="seat_number" value="1"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="affa3a73de3e472fb5a88aa3463e8085"/>
+            <column name="row_number" value="5"/>
+            <column name="seat_number" value="2"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="59c56332b50d4f6f9452fef752159aea"/>
+            <column name="row_number" value="5"/>
+            <column name="seat_number" value="3"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="2368257b90c04af7866d8e8373de9c54"/>
+            <column name="row_number" value="5"/>
+            <column name="seat_number" value="4"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="041fa74fda404b5594642ff755114830"/>
+            <column name="row_number" value="5"/>
+            <column name="seat_number" value="5"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
+        </insert>
+        <insert tableName="seats">
+            <column name="id" value="52be15df498f43dfbdc6eeb68c0c09b5"/>
+            <column name="row_number" value="5"/>
+            <column name="seat_number" value="6"/>
+            <column name="hall_id" value="5407d989c8c645fd8cd3c7c84955eff2"/>
         </insert>
     </changeSet>
 

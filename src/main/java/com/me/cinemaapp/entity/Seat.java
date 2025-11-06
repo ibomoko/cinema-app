@@ -25,4 +25,7 @@ public class Seat {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hall_id")
     private Hall hall;
+
+    @Column(name = "hall_id", insertable = false, updatable = false)
+    private String hallId;
 }

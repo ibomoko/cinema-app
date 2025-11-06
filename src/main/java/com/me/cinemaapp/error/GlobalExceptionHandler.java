@@ -1,5 +1,6 @@
 package com.me.cinemaapp.error;
 
+import com.me.cinemaapp.error.exception.InsufficientBalanceException;
 import com.me.cinemaapp.error.exception.ResourceAlreadyExistException;
 import com.me.cinemaapp.error.exception.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -34,6 +35,12 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.CONFLICT)
     public ErrorResponse handleResourceAlreadyExistException(ResourceAlreadyExistException exception) {
         return new ErrorResponse(HttpStatus.CONFLICT,exception.getMessage());
+    }
+
+    @ExceptionHandler(InsufficientBalanceException.class)
+    @ResponseStatus(HttpStatus.PAYMENT_REQUIRED)
+    public ErrorResponse handleInsufficientBalanceException(InsufficientBalanceException exception) {
+        return new ErrorResponse(HttpStatus.PAYMENT_REQUIRED,exception.getMessage());
     }
 
 }
