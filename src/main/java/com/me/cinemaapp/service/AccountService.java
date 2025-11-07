@@ -3,7 +3,6 @@ package com.me.cinemaapp.service;
 import com.me.cinemaapp.converter.UserConverter;
 import com.me.cinemaapp.dao.UserRepository;
 import com.me.cinemaapp.entity.User;
-import com.me.cinemaapp.enums.Role;
 import com.me.cinemaapp.error.exception.ResourceAlreadyExistException;
 import com.me.cinemaapp.error.exception.ResourceNotFoundException;
 import com.me.cinemaapp.model.request.UserSignInRequest;
@@ -13,9 +12,6 @@ import com.me.cinemaapp.security.JWTProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.math.BigDecimal;
-import java.math.BigInteger;
 
 @Service
 @RequiredArgsConstructor
