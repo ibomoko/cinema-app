@@ -1,0 +1,12 @@
+version: '3.8'
+
+# Simple Docker Compose file to run the Cinema Application
+# We can add configuration for Spring Boot Actuator health checks, logging, etc.
+
+services:
+  cinema-app:
+    build: .
+    container_name: cinema-app
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
